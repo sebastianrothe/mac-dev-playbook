@@ -1,0 +1,296 @@
+dotfiles_repo_local_destination: ~/Documents/projects/dotfiles
+
+post_provision_tasks:
+  - custom
+
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
+  - homebrew/cask-versions
+  - homebrew/cask-fonts
+  - homebrew/cask-drivers
+  - teamookla/speedtest
+  - buo/cask-upgrade
+
+homebrew_installed_packages:
+  #- ansible # Installed via Pip.
+  - autoconf
+  - bash
+  - bash-completion
+  #- doxygen
+  - duti
+  - gettext
+  - gifsicle
+  - git
+  #- github/gh/gh
+  - gitui
+  - go
+  - gpg
+  - htop
+  - httpie
+  - iperf
+  - jq
+  - lazydocker
+  - libevent
+  #- sqlite
+  - micro
+  #- mcrypt
+  - nmap
+  - node
+  - n
+  - php
+  - ssh-copy-id
+  - tmux
+  - readline
+  - openssl
+  - pv
+  - wrk
+  - yamllint
+  - hadolint
+  - yq
+  - zsh-history-substring-search
+  - pnpm
+  - azure-cli
+  - composer
+  - docker-compose
+  - qemu
+  - colima
+  - utm
+  - docker
+  - podman
+  - f3
+  - fzf
+  - go
+  - git-lfs
+  - git-interactive-rebase-tool
+  - gradle
+  - mackup
+  - magic-wormhole
+  - nyx
+  - tmux
+  - rsync
+  - midnight-commander
+  - micro
+  - openssh
+  - ruby
+  - shellcheck
+  - telnet
+  - tor
+  - torsocks
+  - tree
+  - unzip
+  - vim
+  - w3m
+  # GNU Core Utils
+  - coreutils
+  - binutils
+  - diffutils
+  - ed
+  - findutils
+  - gnu-indent
+  - gnu-sed
+  - gnu-tar
+  - gnu-which
+  - gnutls
+  - grep
+  - gzip
+  - screen
+  - watch
+  - wdiff
+  - wget
+  - youtube-dl
+  - zsh
+  - wp-cli
+  - testssl
+  - curl
+  - cocoapods
+  - openssl
+  - gzip
+  - mas
+  - carthage
+  - fd
+  - dive
+  # SVN needed for font-cask
+  - svn
+  # build tools
+  - make
+  - m4
+  - gpatch
+
+homebrew_uninstalled_packages: []
+
+homebrew_cask_uninstalled_apps: []
+
+homebrew_cask_apps:
+  - dropbox
+  - firefox
+  - firefox-developer-edition
+  - google-chrome
+  - google-chrome-canary
+  - handbrake
+  - kitty
+  - licecap
+  #- maccy
+  - slack
+  - sublime-text
+  - transmit
+  - vagrant
+  # custom additions
+  - affinity-publisher
+  - multipass
+  # - alfred - replaced by raycast
+  - altserver
+  - android-file-transfer
+  - android-studio
+  - appcleaner
+  - arq
+  - betterzip
+  - breitbandmessung
+  - calibre
+  - canon-eos-utility
+  - canon-eos-webcam-utility
+  - commander-one
+  - devolo-cockpit
+  - dropbox
+  #- filezilla - n/a
+  - forklift
+  - flux
+  - font-fira-code
+  - font-hack
+  - font-inconsolata-g-for-powerline
+  - font-menlo-for-powerline
+  - font-source-code-pro-for-powerline
+  - font-open-sans
+  - font-roboto
+  - font-victor-mono
+  #- ganttproject - 404
+  - gemini
+  - gog-galaxy
+  - google-cloud-sdk
+  - gpg-suite-no-mail
+  - hot
+  - hyper
+  - iina
+  - jdownloader
+  - keepassxc
+  - keka
+  - little-snitch
+  - macdown
+  - meld
+  - micro-snitch
+  - mongodb-compass
+  - monitorcontrol
+  - moonlight
+  - mpv
+  - nextcloud
+  - nova
+  - obs
+  - macfuse
+  - moneymoney
+  - parallels16
+  - porting-kit
+  - qlcolorcode
+  - qlimagesize
+  - qlmarkdown
+  - qlprettypatch
+  - qlstephen
+  - qlvideo
+  - quicklook-csv
+  - quicklook-json
+  - quicklookase
+  - raycast
+  - rectangle
+  - scroll-reverser
+  - scummvm
+  - signal
+  - sourcetree
+  - splashtop-personal
+  - spotifree
+  - spotify
+  - sketch
+  - steam
+  - suspicious-package
+  - synergy
+  - tableplus
+  - dbeaver-community
+  - teamviewer
+  - temurin
+  - temurin11
+  - temurin8 # for jdownloader
+  - homebrew/cask/transmission
+  - thunderbird
+  - tiptoi-manager
+  - tuxera-ntfs
+  - visual-studio-code
+  #- vlc
+  - webpquicklook
+  #- wineskin-winery - n/a
+  #- wordpresscom
+  - xquartz
+  - yubico-yubikey-manager
+  - timing
+  - telegram
+  - zoom
+  # GooseVPN - n/a
+  - cleanmymac
+  # F3X - n/a
+  - imagealpha
+  - imageoptim
+  - intellij-idea
+  - jetbrains-toolbox
+  - karabiner-elements
+  - coconutbattery
+  - microsoft-teams # sluggish
+  # Logitech - hangs quite often
+  # QuickRes - n/a
+  - teensy
+  # Teensyduino - n/a
+  - balenaetcher
+  # tplc
+  # istat-menus - replaced by stats
+  - stats
+  - little-snitch # can be replaced by LuLu
+
+mas_installed_apps:
+  #- { id: 498486288, name: "Quick Resizer" }
+  - { id: 497799835, name: "Xcode" }
+  - { id: 1518036000, name: "Sequel Ace" }
+  - { id: 904280696, name: "Things" }
+  - { id: 425264550, name: "Disk Speed Test" }
+  - { id: 409183694, name: "Keynote" }
+  - { id: 639210716, name: "NeoOffice" }
+  - { id: 425955336, name: "Skitch" }
+  - { id: 413965349, name: "Soulver 2" }
+  - { id: 682658836, name: "GarageBand" }
+  # - { id: 407963104, name: "Pixelmator" } - n/a for ARM
+  - { id: 409203825, name: "Numbers" }
+  - { id: 824183456, name: "Affinity Photo" }
+  - { id: 409201541, name: "Pages" }
+  - { id: 408981434, name: "iMovie" }
+  - { id: 1295203466, name: "Microsoft Remote Desktop" }
+  - { id: 1055511498, name: "Day One" }
+  - { id: 824171161, name: "Affinity Designer" }
+  - { id: 1440147259, name: "Ka-Block!" }
+
+npm_packages:
+  - name: npm-check-updates
+  - name: eslint
+  - name: npm
+  - name: trash-cli
+
+pip_packages:
+  - name: mkdocs
+  - name: "ansible-lint[yamllint]"
+
+gem_packages: []
+
+configure_sublime: true
+
+configure_dock: true
+dockitems_remove:
+  - Launchpad
+  - TV
+dockitems_persist:
+  - name: "Sublime Text"
+    path: "/Applications/Sublime Text.app/"
+    pos: 5
