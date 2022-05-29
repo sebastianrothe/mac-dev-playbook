@@ -19,9 +19,39 @@
 1. Switch locale to English, region to Germany
 1. Add input sources: german, US international, US
 1. Disable Ad targeting
-1. Install node LTS + latest (n with N_PREFIX=$HOME/.n)
+1. Install node lts
+  - export N_PREFIX=$HOME/.n
+  - export PATH=$N_PREFIX/bin:$PATH
+  - LTS with `n install lts latest`
 1. Setup ZSH (zsh4humans, dotfiles, powerlevel10k)
+  - zsh4humans
+  - zoxide `echo 'eval "$(zoxide init zsh)"' >> ~/.zshrc
+  - ZSH themes
+    - Pure
+    - https://github.com/Powerlevel9k/powerlevel9k/wiki/Show-Off-Your-Config
+    - https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+  - Aliases
+    - https://github.com/zimfw/utility/blob/master/init.zsh
+    - https://github.com/zimfw/git/blob/master/init.zsh
+    - https://github.com/ericboehs/dotfiles/blob/master/.zsh/abbreviations.zsh
+    - https://github.com/ohmyzsh/ohmyzsh/wiki/Cheatsheet
+    - https://github.com/ohmyzsh/ohmyzsh/discussions/10591
+  - obsolete
+    - fzf `$(brew --prefix)/opt/fzf/install`
+    - powerlevel10k `echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc`
 1. Setup VIM (NeoVIM, 8+ Extensions)
+  - Vimrc https://github.com/amix/vimrc#how-to-install-the-basic-version
+  - Pathogen/Vundle/Vim-plug or native modules https://shapeshed.com/vim-packages/ https://vimhelp.org/repeat.txt.html#packages
+    - https://medium.com/@paulodiovani/installing-vim-8-plugins-with-the-native-pack-system-39b71c351fea
+    - https://dev.to/sabrinagannon/moving-to-native-vim-plugin-management-1hpa
+    - https://medium.com/@huntie/10-essential-vim-plugins-for-2018-39957190b7a9
+    - https://github.com/editorconfig/editorconfig-vim
+  - Neovim
+  - Themes
+    - https://raw.githubusercontent.com/GertjanReynaert/cobalt2-vim-theme/master/colors/cobalt2.vim
+    - https://raw.githubusercontent.com/connorholyday/vim-snazzy/master/colors/snazzy.vim
+1. Setup Hyper
+  - `hyper install hyper-snazzy`
 1. Unhide Sound icon in Statusbar
 1. Disable audio bell on Terminal profile
 1. Remap Esc-Caps Lock for internal keyboard
@@ -66,5 +96,22 @@
   - Timing
   - Arq
 1. Start Tor and Nyx
+  - cp torrc /opt/homebrew/etc/tor/torrc
+  - brew services restart tor
 1. Add printer drivers
   - https://support.apple.com/kb/DL1888?locale=en_US
+1. Allow Canon EOS Camera for Slack, Teams, Zoom
+  - sudo codesign --remove-signature "/Applications/Microsoft Teams.app/Contents/Frameworks/Microsoft Teams Helper (Renderer).app"
+  - sudo codesign --remove-signature "/Applications/Slack.app” && sudo codesign --remove-signature "/Applications/Slack.app/Contents/Frameworks/Slack Helper.app" && sudo codesign --remove-signature "/Applications/Slack.app/Contents/Frameworks/Slack Helper (Renderer).app" && sudo codesign --remove-signature "/Applications/Slack.app/Contents/Frameworks/Slack Helper (Plugin).app" && sudo codesign --remove-signature "/Applications/Slack.app/Contents/Frameworks/Slack Helper (GPU).app"
+  - # sudo codesign --remove-signature "/Applications/zoom.us.app/"
+  - Run EOS Utility Installer
+1. Download GooseVPN `wget https://appup.goosevpn.com/GOOSE_VPN.dmg`
+1. Configure System
+  - https://github.com/charlax/dotfiles/blob/master/install/install-apps-all.sh
+  - https://git.herrbischoff.com/awesome-command-line-apps/about/#macos
+  - https://github.com/geerlingguy/dotfiles
+  - https://github.com/mathiasbynens/dotfiles
+  - https://github.com/kalkayan/dotfiles
+  - https://github.com/kalkayan/dotfiles/blob/main/.aliases#L69
+  - https://wiki.nikitavoloboev.xyz/unix/dotfiles
+  - https://github.com/mitchellh/nixos-config

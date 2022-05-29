@@ -9,7 +9,6 @@ homebrew_taps:
   - homebrew/cask-versions
   - homebrew/cask-fonts
   - homebrew/cask-drivers
-  - teamookla/speedtest
   - buo/cask-upgrade
 
 homebrew_installed_packages:
@@ -22,6 +21,7 @@ homebrew_installed_packages:
   - gettext
   - gifsicle
   - git
+  - git-gui # gitk
   #- github/gh/gh
   - gitui
   - go
@@ -48,10 +48,13 @@ homebrew_installed_packages:
   - yamllint
   - hadolint
   - yq
+  - zsh
   - zsh-history-substring-search
+  - romkatv/powerlevel10k/powerlevel10k
   - pnpm
   - azure-cli
   - composer
+  - symfony-cli/homebrew/symfony-cli
   - docker-compose
   - qemu
   - colima
@@ -78,6 +81,7 @@ homebrew_installed_packages:
   - tor
   - torsocks
   - tree
+  - trash
   - unzip
   - vim
   - w3m
@@ -85,7 +89,6 @@ homebrew_installed_packages:
   - coreutils
   - binutils
   - diffutils
-  - ed
   - findutils
   - gnu-indent
   - gnu-sed
@@ -99,7 +102,6 @@ homebrew_installed_packages:
   - wdiff
   - wget
   - youtube-dl
-  - zsh
   - wp-cli
   - testssl
   - curl
@@ -107,8 +109,9 @@ homebrew_installed_packages:
   - openssl
   - gzip
   - mas
+  - m-cli
   - carthage
-  - fd
+  - fd  # replacement for find
   - dive
   # SVN needed for font-cask
   - svn
@@ -116,6 +119,25 @@ homebrew_installed_packages:
   - make
   - m4
   - gpatch
+  - hyperfine
+  - bandwhich
+  - broot
+  - dust
+  - sd  # replacement for cat
+  - zoxide
+  - ctop
+  - rg
+  - rename
+  - tealdeer # replacement for man
+  - shfmt
+  - bat # replacement for cat
+  - hexyl
+  - exa # replacement for ls
+  - ncdu
+  - procs  # replacement for ps
+  - eddieantonio/eddieantonio/imgcat
+  - speedtest/teamookla/speedtest
+  - bottom # replacement for top
 
 homebrew_uninstalled_packages: []
 
@@ -148,7 +170,7 @@ homebrew_cask_apps:
   - breitbandmessung
   - calibre
   - canon-eos-utility
-  - canon-eos-webcam-utility
+  - canon-eos-webcam-utility # https://gdlp01.c-wss.com/gds/3/0200006293/01/eos-webcam-utility-mac-1-0.html
   - commander-one
   - devolo-cockpit
   - dropbox
@@ -156,13 +178,17 @@ homebrew_cask_apps:
   - forklift
   - flux
   - font-fira-code
+  - font-fira-code-nerd-font
   - font-hack
+  - font-hack-nerd-font
   - font-inconsolata-g-for-powerline
-  - font-menlo-for-powerline
+  - font-meslo-lg
+  - font-meslo-lg-nerd-font
   - font-source-code-pro-for-powerline
   - font-open-sans
   - font-roboto
   - font-victor-mono
+  - font-victor-mono-nerd-font
   #- ganttproject - 404
   - gemini
   - gog-galaxy
@@ -171,10 +197,17 @@ homebrew_cask_apps:
   - hot
   - hyper
   - iina
+  - itsycal
+  - fantastical
   - jdownloader
   - keepassxc
   - keka
+  - linearmouse
+  - mos
+  - smooze
   - little-snitch
+  - libreoffice
+  - libreoffice-language-pack
   - macdown
   - meld
   - micro-snitch
@@ -231,17 +264,16 @@ homebrew_cask_apps:
   - timing
   - telegram
   - zoom
-  # GooseVPN - n/a
+  # GooseVPN - n/a - download from https://appup.goosevpn.com/GOOSE_VPN.dmg
   - cleanmymac
   # F3X - n/a
-  - imagealpha
   - imageoptim
   - intellij-idea
   - jetbrains-toolbox
   - karabiner-elements
   - coconutbattery
   - microsoft-teams # sluggish
-  # Logitech - hangs quite often
+  - logitech-g-hub # hangs quite often
   # QuickRes - n/a
   - teensy
   # Teensyduino - n/a
@@ -258,7 +290,7 @@ mas_installed_apps:
   - { id: 904280696, name: "Things" }
   - { id: 425264550, name: "Disk Speed Test" }
   - { id: 409183694, name: "Keynote" }
-  - { id: 639210716, name: "NeoOffice" }
+  # - { id: 639210716, name: "NeoOffice" } - replaced with native LibreOffice
   - { id: 425955336, name: "Skitch" }
   - { id: 413965349, name: "Soulver 2" }
   - { id: 682658836, name: "GarageBand" }
@@ -271,12 +303,14 @@ mas_installed_apps:
   - { id: 1055511498, name: "Day One" }
   - { id: 824171161, name: "Affinity Designer" }
   - { id: 1440147259, name: "Ka-Block!" }
+  - { id: 1544743900, name: "Hush" }
+  # - { id: 1365531024, name: "1Blocker" }
 
 npm_packages:
   - name: npm-check-updates
   - name: eslint
   - name: npm
-  - name: trash-cli
+  - name: fkill-cli # replaces kill
 
 pip_packages:
   - name: mkdocs

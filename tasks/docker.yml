@@ -19,7 +19,7 @@
 
 - name: Install Compose v2
   shell:
-    - # see https://github.com/docker/compose/issues/8575 and https://docs.docker.com/compose/cli-command/#install-on-linux
+    # see https://github.com/docker/compose/issues/8575 and https://docs.docker.com/compose/cli-command/#install-on-linux
     - sudo apt install jq
     - DOCKER_COMPOSE_VERSION=$(curl --silent https://api.github.com/repos/docker/compose/releases/latest | jq .name -r)
     - echo "Installing Compose $DOCKER_COMPOSE_VERSION"
@@ -32,8 +32,12 @@
 
 - name: Install Compose v2 Switch
   shell:
-    - # see https://github.com/docker/compose-switch/
+    # see https://github.com/docker/compose-switch/
     - curl -sf -L https://raw.githubusercontent.com/docker/compose-switch/master/install_on_linux.sh -o install_compose_switch.sh
     - chmod +x install_compose_switch.sh
     - sudo ./install_compose_switch.sh
     - echo `docker-compose version`
+
+- name: Create alternate Docker-VM
+  shell:
+    - colima start --cpu 4 --memory 4 --dns 1.1.1.1
