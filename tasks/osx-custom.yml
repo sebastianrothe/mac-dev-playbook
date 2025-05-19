@@ -1,0 +1,59 @@
+---
+- name: Clean up the Dock
+  shell: dockutil --remove all
+
+# via https://github.com/jakeprice-dev/ansible-macbook-macos/blob/master/playbook.yml#L334
+- name: Dock configuration
+  osx_defaults:
+    domain: com.apple.dock
+    key: "{{ item.key }}"
+    type: "{{ item.type }}"
+    value: "{{ item.value }}"
+  with_items:
+    - { key: show-recents, type: bool, value: true }
+    - { key: autohide, type: int, value: 1 }
+    - { key: magnification, type: int, value: 0 }
+    - { key: orientation, type: string, value: left }
+    - { key: tilesize, type: float, value: 54 }
+    - { key: minimize-to-application, type: int, value: 1 }
+    - { key: mru-spaces, type: int, value: true }
+    - { key: mineffect, type: string, value: scale }
+    - { key: autohide-delay, type: float, value: 0 }
+    # Hot corners
+    # Possible values:
+    #  0: no-op
+    #  2: Mission Control
+    #  3: Show application windows
+    #  4: Desktop
+    #  5: Start screen saver
+    #  6: Disable screen saver
+    #  7: Dashboard
+    # 10: Put display to sleep
+    # 11: Launchpad
+    # 12: Notification Center
+    # Bottom right screen corner → Mission Control
+    - { key: wvous-br-corner, type: int, value: 2 }
+    - { key: wvous-br-modifier, type: int, value: 0 }
+    # Bottom left screen corner → Desktop
+    - { key: wvous-bl-corner, type: int, value: 4 }
+    - { key: wvous-bl-modifier, type: int, value: 0 }
+
+- name: Finder configuration
+  osx_defaults:
+    domain: com.apple.finder
+    key: "{{ item.key }}"
+    type: "{{ item.type }}"
+    value: "{{ item.value }}"
+  with_items:
+    - { key: FXArrangeGroupViewBy, type: string, value: Name }
+    - { key: FXPreferredGroupBy, type: string, value: Name }
+    - { key: _FXSortFoldersFirst, type: int, value: 1 }
+    - { key: NewWindowTarget, type: string, value: PfLo}
+    - { key: NewWindowTargetPath, type: string, value: "file://${HOME}/Downloads/" }
+
+- name: Disable Bluetooth
+  shell: defaults write /Library/Preferences/com.apple.Bluetooth ControllerPowerState -int 0
+
+- name: Symlink Youtube-dl from yt-dlp
+  shell:
+    - ln -s /opt/homebrew/bin/yt-dlp /opt/homebrew/bin/youtube-dl

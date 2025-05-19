@@ -1,0 +1,377 @@
+dotfiles_repo_local_destination: ~/Documents/projects/dotfiles
+
+post_provision_tasks:
+  - custom
+
+homebrew_taps:
+  - homebrew/cask-versions
+  - homebrew/cask-fonts
+  - buo/cask-upgrade
+
+homebrew_installed_packages:
+  #- ansible # Installed via Pip.
+  - autoconf
+  - bash
+  - bash-completion
+  #- doxygen
+  - duti
+  - gettext
+  - gifsicle
+  - git
+  - git-gui # former gitk
+  #- github/gh/gh
+  - gitui
+  - git-filter-repo
+  - go
+  - gpg
+  - htop
+  - httpie
+  - iperf
+  - jq
+  - lazydocker
+  - libevent
+  #- sqlite
+  - micro
+  #- mcrypt
+  - nmap
+  - node
+  - n
+  - php
+  - ssh-copy-id
+  - tmux
+  - readline
+  - openssl
+  - qt@5 # version 5 for ?
+  - tasmotizer
+  - pv
+  - wrk
+  - yamllint
+  - hadolint
+  - yq
+  - zsh
+  - zsh-history-substring-search
+  - romkatv/powerlevel10k/powerlevel10k
+  - pnpm
+  - azure-cli
+  - composer
+  - symfony-cli/homebrew/symfony-cli
+  - docker-compose
+  - docker-buildx
+  - glibc # required by qemu
+  - qemu
+  - lima
+  - colima
+  - utm
+  - docker # or homebrew/cask/docker for Docker-Desktop
+  - podman
+  - helm
+  - kubectl
+  - f3
+  - fzf
+  - go
+  - git-lfs
+  - git-interactive-rebase-tool
+  - gradle
+  - mackup
+  - magic-wormhole
+  - nyx
+  - plantuml
+  - tmux
+  - rsync
+  - midnight-commander
+  - micro
+  - openssh
+  - ruby
+  - shellcheck
+  - tor
+  - torsocks
+  - tree
+  - trash
+  - unzip
+  - vim
+  - w3m
+  # GNU Core Utils
+  - coreutils
+  - binutils
+  - diffutils
+  - findutils
+  - inetutils
+  - gnu-indent
+  - gnu-sed
+  - gnu-tar
+  - gnu-which
+  - gnutls
+  - grep
+  - gzip
+  - screen
+  - watch
+  - wdiff
+  - wget
+  - yt-dlp
+  - wp-cli
+  - testssl
+  - curl
+  - cocoapods
+  - openssl
+  - gzip
+  - mas
+  - m-cli
+  - carthage
+  # find Rust alternatives for unix commands here: https://zaiste.net/posts/shell-commands-rust/
+  - fd  # replacement for find
+  - dive
+  # SVN needed for font-cask
+  - svn
+  # build tools
+  - make
+  - m4
+  - gpatch
+  - hyperfine
+  - bandwhich
+  - broot
+  - dust
+  - sd  # replacement for cat
+  - zoxide
+  - ctop
+  - rg
+  - rename
+  - tealdeer # replacement for man
+  - shfmt
+  - bat # replacement for cat
+  - hexyl
+  - eza # replacement for ls
+  - ncdu
+  - procs  # replacement for ps
+  - eddieantonio/eddieantonio/imgcat
+  - speedtest/teamookla/speedtest
+  - bottom # replacement for top
+  - gromgit/fuse/ext4fuse-mac
+  - gromgit/fuse/ext2fuse-mac
+  - pyenv
+  - mise
+
+homebrew_uninstalled_packages: []
+
+homebrew_cask_uninstalled_apps: []
+
+homebrew_cask_apps:
+  - dropbox
+  - firefox
+  - firefox@developer-edition
+  - google-chrome
+  - google-chrome@canary
+  - handbrake
+  #- kitty
+  #- licecap
+  #- docker # or docker for docker-client
+  #- maccy
+  #- slack
+  - sublime-text
+  - transmit
+  #- vagrant
+  # custom additions
+  - affinity-publisher
+  - affinity-designer
+  - affinity-photo
+  #- multipass
+  # - alfred - replaced by raycast
+  #- altserver
+  - android-file-transfer
+  #- android-studio
+  - appcleaner
+  - arq
+  # - betterzip # via setapp
+  - breitbandmessung
+  - calibre
+  #- canon-eos-utility # needs v2 https://gdlp01.c-wss.com/gds/9/0200005809/01/EU-Installset-M2.14.31.12c.dmg.zip
+  #- canon-eos-webcam-utility # https://downloads.canon.com/webcam/EOSWebcamUtilityPro-MAC2.0.30.pkg.zip
+  - opal-composer
+  #- commander-one
+  # - dash # via setapp
+  - devolo-cockpit
+  - dropbox
+  #- filezilla - n/a forklift does the same
+  #- forklift # via setapp
+  #- flux
+  - font-fira-code
+  - font-fira-code-nerd-font
+  - font-hack
+  - font-hack-nerd-font
+  - font-inconsolata-g-for-powerline
+  - font-meslo-lg
+  - font-meslo-lg-nerd-font
+  - font-source-code-pro-for-powerline
+  - font-open-sans
+  - font-roboto
+  - font-victor-mono
+  - font-victor-mono-nerd-font
+  #- ganttproject - 404
+  # - gemini # via setapp
+  - gog-galaxy
+  #- battle-net
+  - google-cloud-sdk
+  #- gpg-suite-no-mail
+  #- hot
+  #- hyper # replaced by warp
+  - iina
+  - itsycal
+  #- fantastical
+  #- jdownloader
+  - keepassxc
+  - keka # or betterzip?
+  - linearmouse
+  #- mos
+  #- smooze
+  - little-snitch
+  - libreoffice
+  - libreoffice-language-pack
+  # - macdown # not maintained anymore
+  #- meld
+  - micro-snitch
+  #- mongodb-compass
+  - monitorcontrol
+  #- moonlight
+  - mpv
+  - nextcloud
+  #- nova
+  - obs
+  - obsidian
+  - macfuse
+  - moneymoney
+  #- parallels@18 # replaced by crossover
+  - porting-kit
+  - crossover
+  - qlcolorcode
+  - qlimagesize
+  - qlmarkdown
+  - qlprettypatch
+  - qlstephen
+  - qlvideo
+  - quicklook-csv
+  - quicklook-json
+  - quicklookase
+  #- raycast
+  #- rectangle # replaced by monarch
+  - monarch # replaced by monarch
+  - scroll-reverser
+  - scummvm
+  - signal
+  #- sourcetree
+  #- splashtop-personal - or remote-desktop
+  #- mutespotifyads
+  #- spotifree
+  #- spotify # replace by web version
+  #- sketch
+  - steam
+  - suspicious-package
+  #- synergy
+  - toggl-track
+  #- tableplus # via setapp
+  #- dbeaver-community
+  #- teamviewer
+  - temurin
+  - temurin@11
+  #- temurin@8 # for jdownloader
+  - homebrew/cask/transmission
+  - thunderbird
+  - tiptoi-manager
+  - tuxera-ntfs
+  - visual-studio-code
+  - windsurf
+  #- vlc
+  - webpquicklook
+  #- wineskin-winery - n/a
+  #- wordpresscom
+  - xquartz
+  - yubico-yubikey-manager
+  #- timing # via setapp
+  - telegram
+  - zoom
+  # GooseVPN - n/a - download from https://appup.goosevpn.com/GOOSE_VPN.dmg
+  #- cleanmymac # via setapp
+  # F3X - n/a
+  - imageoptim
+  #- intellij-idea
+  - jetbrains-toolbox
+  - karabiner-elements
+  - coconutbattery
+  #- microsoft-teams
+  - logitech-g-hub # can be replaced by linearmouse
+  # QuickRes - n/a
+  - teensy
+  # Teensyduino - n/a
+  #- balenaetcher - replaced by raspberry-pi-imager
+  # tplc
+  # istat-menus - replaced by stats
+  - stats
+  - little-snitch # can be replaced by LuLu
+  - via
+  - qmk-toolbox
+  - warp
+  - cursor
+  - polypane
+  - geekbench
+  - audacity
+  #- safari-technology-preview
+  - retroarch-metal
+  - keyclu
+  #- starcraft
+  - setapp
+  - mqtt-explorer
+  - adobe-digital-editions
+  - kindle
+  - chatgpt
+  - aldente
+  #- moom
+  - kindle-previewer
+  - zed
+  - raspberry-pi-imager
+
+mas_installed_apps:
+  #- { id: 498486288, name: "Quick Resizer" }
+  - { id: 497799835, name: "Xcode" }
+  #- { id: 1518036000, name: "Sequel Ace" }
+  - { id: 904280696, name: "Things" }
+  - { id: 425264550, name: "Disk Speed Test" }
+  # - { id: 409183694, name: "Keynote" }
+  - { id: 639210716, name: "NeoOffice" }
+  - { id: 425955336, name: "Skitch" }
+  #- { id: 413965349, name: "Soulver 2" }
+  #- { id: 682658836, name: "GarageBand" }
+  # - { id: 407963104, name: "Pixelmator" } - n/a for ARM
+  - { id: 409203825, name: "Numbers" }
+  #- { id: 824183456, name: "Affinity Photo" }
+  - { id: 409201541, name: "Pages" }
+  # - { id: 408981434, name: "iMovie" }
+  - { id: 1295203466, name: "Microsoft Remote Desktop" }
+  - { id: 1055511498, name: "Day One" }
+  #- { id: 824171161, name: "Affinity Designer" }
+  - { id: 1440147259, name: "Ka-Block!" }
+  - { id: 1544743900, name: "Hush" }
+  - { id: 914457352, name: "Metapho" }
+  # - { id: 1365531024, name: "1Blocker" }
+  - { id: 943840744, name: "Victron Connect" }
+
+npm_packages:
+  - name: npm-check-updates
+  - name: fkill-cli # replaces kill
+
+pip_packages:
+  - name: mkdocs
+  - name: "ansible-lint[yamllint]"
+  - name: esptool
+  - name: aider-install
+
+gem_packages: []
+
+configure_sublime: true
+
+configure_dock: true
+dockitems_remove:
+  - Launchpad
+  - TV
+
+dockitems_persist:
+  - name: "Sublime Text"
+    path: "/Applications/Sublime Text.app/"
+    pos: 5
