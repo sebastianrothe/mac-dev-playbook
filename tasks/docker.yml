@@ -4,6 +4,12 @@
     - mkdir -p ~/.docker/cli-plugins
     - ln -sfn /opt/homebrew/opt/docker-compose/bin/docker-compose ~/.docker/cli-plugins/docker-compose
 
+- name: Symlink Docker Buildx
+  shell:
+    - mkdir -p ~/.docker/cli-plugins
+    - ln -sfn /opt/homebrew/opt/docker-buildx/bin/docker-buildx ~/.docker/cli-plugins/docker-buildx
+    - docker buildx install
+
 - name: Create alternate Docker-VM
   shell:
     - exit 0 # ubuntu vm and m1 arm architecture mixing is not supported
@@ -17,27 +23,7 @@
     - docker context create remote --docker host=ssh://ubuntu@docker-vm.local
     - docker context use remote
 
-- name: Install Compose v2
+- name: Create Colima (Qemu) VM for docker
   shell:
-    # see https://github.com/docker/compose/issues/8575 and https://docs.docker.com/compose/cli-command/#install-on-linux
-    - sudo apt install jq
-    - DOCKER_COMPOSE_VERSION=$(curl --silent https://api.github.com/repos/docker/compose/releases/latest | jq .name -r)
-    - echo "Installing Compose $DOCKER_COMPOSE_VERSION"
-    - DOCKER_CONFIG="/usr/local/lib/docker"
-    - DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
-    - sudo mkdir -p $DOCKER_CONFIG/cli-plugins
-    - sudo curl -SL "https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_VERSION/docker-compose-$(uname -s)-$(uname -m)" -o $DOCKER_CONFIG/cli-plugins/docker-compose
-    - sudo chmod +x $DOCKER_CONFIG/cli-plugins/docker-compose
-    - echo `docker compose version`
-
-- name: Install Compose v2 Switch
-  shell:
-    # see https://github.com/docker/compose-switch/
-    - curl -sf -L https://raw.githubusercontent.com/docker/compose-switch/master/install_on_linux.sh -o install_compose_switch.sh
-    - chmod +x install_compose_switch.sh
-    - sudo ./install_compose_switch.sh
-    - echo `docker-compose version`
-
-- name: Create alternate Docker-VM
-  shell:
-    - colima start --cpu 4 --memory 4 --dns 1.1.1.1
+    - colima start --cpu 4 --memory 4 --dns 1.1.1.1 --vm-type vz --mount-type virtiofs 
+    #--vz-rosetta still has problems
