@@ -3,6 +3,7 @@
 1. Install Ansible (https://github.com/geerlingguy/mac-dev-playbook#installation)
   1. export PATH="$HOME/Library/Python/3.8/bin:/opt/homebrew/bin:$PATH"
 1. sudo chown -R $(whoami) /opt/homebrew
+1. `brew analytics off`
 1. sudo softwareupdate --install-rosetta --agree-to-license
 1. Run ansible playbook
 1. Change Wallpaper
@@ -61,6 +62,7 @@
 1. Configure Hot Corners
 1. Start ScrollReverser, Rectangle, Raycast
 1. Start Android Studio
+  - Install SDK, Platform Tools
 1. Configure VSCode
   - Settings
   - Themes
@@ -101,10 +103,8 @@
 1. Add printer drivers
   - https://support.apple.com/kb/DL1888?locale=en_US
 1. Allow Canon EOS Camera for Slack, Teams, Zoom
-  - sudo codesign --remove-signature "/Applications/Microsoft Teams.app/Contents/Frameworks/Microsoft Teams Helper (Renderer).app"
-  - sudo codesign --remove-signature "/Applications/Slack.app” && sudo codesign --remove-signature "/Applications/Slack.app/Contents/Frameworks/Slack Helper.app" && sudo codesign --remove-signature "/Applications/Slack.app/Contents/Frameworks/Slack Helper (Renderer).app" && sudo codesign --remove-signature "/Applications/Slack.app/Contents/Frameworks/Slack Helper (Plugin).app" && sudo codesign --remove-signature "/Applications/Slack.app/Contents/Frameworks/Slack Helper (GPU).app"
-  - # sudo codesign --remove-signature "/Applications/zoom.us.app/"
-  - Run EOS Utility Installer
+  - Run EOS Utility v2! Installer
+  - Run EOS Webcam Pro Installer
 1. Download GooseVPN `wget https://appup.goosevpn.com/GOOSE_VPN.dmg`
 1. Configure System
   - https://github.com/charlax/dotfiles/blob/master/install/install-apps-all.sh
@@ -115,3 +115,7 @@
   - https://github.com/kalkayan/dotfiles/blob/main/.aliases#L69
   - https://wiki.nikitavoloboev.xyz/unix/dotfiles
   - https://github.com/mitchellh/nixos-config
+1. Download Glorious Software
+  - https://downloads.gloriousgamingservices.com/download/SETUP_FW_MAC_OS_UPDATER.zip
+1. Download Altus
+  - https://github.com/amanharwara/altus/releases
