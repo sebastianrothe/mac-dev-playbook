@@ -10,19 +10,6 @@
     - ln -sfn /opt/homebrew/opt/docker-buildx/bin/docker-buildx ~/.docker/cli-plugins/docker-buildx
     - docker buildx install
 
-- name: Create alternate Docker-VM
-  shell:
-    - exit 0 # ubuntu vm and m1 arm architecture mixing is not supported
-    - multipass launch --memory 8G --cpus 4 --name docker-vm docker
-    - multipass set client.primary-name=docker-vm
-    - multipass exec docker-vm -- sudo apt install docker-compose
-
-- name: Create alternate Docker context for VM
-  shell:
-    - exit 0 # ubuntu vm and m1 arm architecture mixing is not supported
-    - docker context create remote --docker host=ssh://ubuntu@docker-vm.local
-    - docker context use remote
-
 - name: Create Colima (Qemu) VM for docker
   shell:
     - colima start --cpu 4 --memory 4 --dns 1.1.1.1 --vm-type vz --mount-type virtiofs 
