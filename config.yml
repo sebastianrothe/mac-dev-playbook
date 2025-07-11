@@ -41,7 +41,7 @@ homebrew_installed_packages:
   - tmux
   - readline
   - openssl
-  - qt@5 # version 5 for ?
+  - qt@5 # version 5 for tasmotizer?
   - tasmotizer
   - pv
   - wrk
@@ -52,7 +52,7 @@ homebrew_installed_packages:
   - zsh-history-substring-search
   - romkatv/powerlevel10k/powerlevel10k
   - pnpm
-  - azure-cli
+  #- azure-cli
   - composer
   - symfony-cli/homebrew/symfony-cli
   - docker-compose
@@ -61,14 +61,14 @@ homebrew_installed_packages:
   - qemu
   - lima
   - colima
-  - utm
+  #- utm
   - docker # or homebrew/cask/docker for Docker-Desktop
-  - podman
-  - helm
-  - kubectl
+  #- podman
+  #- helm
+  #- kubectl
   - f3
   - fzf
-  - go
+  #- go
   - git-lfs
   - git-interactive-rebase-tool
   - gradle
@@ -76,10 +76,8 @@ homebrew_installed_packages:
   - magic-wormhole
   - nyx
   - plantuml
-  - tmux
   - rsync
   - midnight-commander
-  - micro
   - openssh
   - ruby
   - shellcheck
@@ -158,8 +156,7 @@ homebrew_cask_apps:
   - dropbox
   - firefox
   - firefox@developer-edition
-  - google-chrome
-  - google-chrome@canary
+  - ungoogle-chromium
   - handbrake
   #- kitty
   #- licecap
@@ -188,7 +185,7 @@ homebrew_cask_apps:
   - opal-composer
   #- commander-one
   # - dash # via setapp
-  - devolo-cockpit
+  #- devolo-cockpit
   - dropbox
   #- filezilla - n/a forklift does the same
   #- forklift # via setapp
@@ -209,7 +206,7 @@ homebrew_cask_apps:
   # - gemini # via setapp
   - gog-galaxy
   #- battle-net
-  - google-cloud-sdk
+  #- google-cloud-sdk
   #- gpg-suite-no-mail
   #- hot
   #- hyper # replaced by warp
@@ -250,9 +247,9 @@ homebrew_cask_apps:
   - quicklook-csv
   - quicklook-json
   - quicklookase
-  #- raycast
-  #- rectangle # replaced by monarch
-  - monarch # replaced by monarch
+  - raycast
+  - rectangle # replaced by monarch
+  #- monarch
   - scroll-reverser
   - scummvm
   - signal
@@ -277,7 +274,8 @@ homebrew_cask_apps:
   - tiptoi-manager
   - tuxera-ntfs
   - visual-studio-code
-  - windsurf
+  - cursor
+  #- windsurf
   #- vlc
   - webpquicklook
   #- wineskin-winery - n/a
@@ -286,7 +284,7 @@ homebrew_cask_apps:
   - yubico-yubikey-manager
   #- timing # via setapp
   - telegram
-  - zoom
+  # - zoom # use webapp
   # GooseVPN - n/a - download from https://appup.goosevpn.com/GOOSE_VPN.dmg
   #- cleanmymac # via setapp
   # F3X - n/a
@@ -296,7 +294,7 @@ homebrew_cask_apps:
   - karabiner-elements
   - coconutbattery
   #- microsoft-teams
-  - logitech-g-hub # can be replaced by linearmouse
+  #- logitech-g-hub # can be replaced by linearmouse
   # QuickRes - n/a
   - teensy
   # Teensyduino - n/a
@@ -321,21 +319,33 @@ homebrew_cask_apps:
   - adobe-digital-editions
   - kindle
   - chatgpt
+  #- claude
   - aldente
   #- moom
   - kindle-previewer
   - zed
   - raspberry-pi-imager
 
+setapp_installed_apps:
+  - soulver3
+  - tableplus
+  #- istatmenus
+  #- keycue # replaced by keyclu
+  - cleanmymac
+  - forklift
+  - awesome habits
+  - gemini
+  - timing
+
 mas_installed_apps:
   #- { id: 498486288, name: "Quick Resizer" }
-  - { id: 497799835, name: "Xcode" }
+  #- { id: 497799835, name: "Xcode" }
   #- { id: 1518036000, name: "Sequel Ace" }
   - { id: 904280696, name: "Things" }
   - { id: 425264550, name: "Disk Speed Test" }
   # - { id: 409183694, name: "Keynote" }
-  - { id: 639210716, name: "NeoOffice" }
-  - { id: 425955336, name: "Skitch" }
+  #- { id: 639210716, name: "NeoOffice" }
+  #- { id: 425955336, name: "Skitch" }
   #- { id: 413965349, name: "Soulver 2" }
   #- { id: 682658836, name: "GarageBand" }
   # - { id: 407963104, name: "Pixelmator" } - n/a for ARM
@@ -343,8 +353,8 @@ mas_installed_apps:
   #- { id: 824183456, name: "Affinity Photo" }
   - { id: 409201541, name: "Pages" }
   # - { id: 408981434, name: "iMovie" }
-  - { id: 1295203466, name: "Microsoft Remote Desktop" }
-  - { id: 1055511498, name: "Day One" }
+  #- { id: 1295203466, name: "Microsoft Remote Desktop" }
+  #- { id: 1055511498, name: "Day One" }
   #- { id: 824171161, name: "Affinity Designer" }
   - { id: 1440147259, name: "Ka-Block!" }
   - { id: 1544743900, name: "Hush" }
