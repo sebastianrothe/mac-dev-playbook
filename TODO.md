@@ -1,7 +1,7 @@
 # Mac Dev Setup
 1. Turn off Bluetooth
 1. Install Ansible (https://github.com/geerlingguy/mac-dev-playbook#installation)
-  1. export PATH="$HOME/Library/Python/3.8/bin:/opt/homebrew/bin:$PATH"
+  1. export PATH="$HOME/Library/Python/3.9/bin:/opt/homebrew/bin:$PATH"
 1. sudo chown -R $(whoami) /opt/homebrew
 1. `brew analytics off`
 1. sudo softwareupdate --install-rosetta --agree-to-license
@@ -23,7 +23,7 @@
 1. Install node lts
   - export N_PREFIX=$HOME/.n
   - export PATH=$N_PREFIX/bin:$PATH
-  - LTS with `n install lts latest`
+  - LTS with `n install lts latest 16`
 1. Setup ZSH (zsh4humans, dotfiles, powerlevel10k)
   - zsh4humans
   - zoxide `echo 'eval "$(zoxide init zsh)"' >> ~/.zshrc
@@ -67,9 +67,6 @@
   - Settings
   - Themes
   - Extensions
-1. Configure Multipass
-  - Add SSH-Key to Multipass Docker VM
-  - Add Multipass IP to /etc/hosts
 1. Copy Backups
   - SSH
   - Documents

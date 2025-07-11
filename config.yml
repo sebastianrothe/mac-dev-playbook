@@ -4,15 +4,15 @@ post_provision_tasks:
   - custom
 
 homebrew_taps:
-  - homebrew/cask-versions
-  - homebrew/cask-fonts
   - buo/cask-upgrade
+  - eddieantonio/eddieantonio
+  - gromgit/fuse
 
 homebrew_installed_packages:
   #- ansible # Installed via Pip.
   - autoconf
-  - bash
-  - bash-completion
+  #- bash # replaced by zsh
+  #- bash-completion # needed?
   #- doxygen
   - duti
   - gettext
@@ -32,7 +32,6 @@ homebrew_installed_packages:
   - libevent
   #- sqlite
   - micro
-  #- mcrypt
   - nmap
   - node
   - n
@@ -42,7 +41,6 @@ homebrew_installed_packages:
   - readline
   - openssl
   - qt@5 # version 5 for tasmotizer?
-  - tasmotizer
   - pv
   - wrk
   - yamllint
@@ -50,28 +48,29 @@ homebrew_installed_packages:
   - yq
   - zsh
   - zsh-history-substring-search
-  - romkatv/powerlevel10k/powerlevel10k
+  - powerlevel10k
   - pnpm
   #- azure-cli
   - composer
-  - symfony-cli/homebrew/symfony-cli
+  #- symfony-cli/homebrew/symfony-cli
   - docker-compose
   - docker-buildx
-  - glibc # required by qemu
+  #- glibc # required by qemu
   - qemu
   - lima
   - colima
-  #- utm
+  - lima-additional-guestagents
+  - utm
   - docker # or homebrew/cask/docker for Docker-Desktop
   #- podman
   #- helm
   #- kubectl
   - f3
   - fzf
-  #- go
   - git-lfs
   - git-interactive-rebase-tool
   - gradle
+  - maven
   - mackup
   - magic-wormhole
   - nyx
@@ -141,12 +140,13 @@ homebrew_installed_packages:
   - ncdu
   - procs  # replacement for ps
   - eddieantonio/eddieantonio/imgcat
-  - speedtest/teamookla/speedtest
+  - speedtest-cli
   - bottom # replacement for top
   - gromgit/fuse/ext4fuse-mac
   - gromgit/fuse/ext2fuse-mac
   - pyenv
-  - mise
+  #- asdf
+  - mise # replacement for asdf
 
 homebrew_uninstalled_packages: []
 
@@ -156,13 +156,13 @@ homebrew_cask_apps:
   - dropbox
   - firefox
   - firefox@developer-edition
-  - ungoogle-chromium
+  - ungoogled-chromium
+  - arc
   - handbrake
   #- kitty
   #- licecap
   #- docker # or docker for docker-client
   #- maccy
-  #- slack
   - sublime-text
   - transmit
   #- vagrant
@@ -170,7 +170,6 @@ homebrew_cask_apps:
   - affinity-publisher
   - affinity-designer
   - affinity-photo
-  #- multipass
   # - alfred - replaced by raycast
   #- altserver
   - android-file-transfer
@@ -239,7 +238,7 @@ homebrew_cask_apps:
   - porting-kit
   - crossover
   - qlcolorcode
-  - qlimagesize
+  #- qlimagesize # unmaintained
   - qlmarkdown
   - qlprettypatch
   - qlstephen
@@ -262,14 +261,14 @@ homebrew_cask_apps:
   - steam
   - suspicious-package
   #- synergy
-  - toggl-track
+  # - toggl-track # not there
   #- tableplus # via setapp
   #- dbeaver-community
   #- teamviewer
   - temurin
   - temurin@11
   #- temurin@8 # for jdownloader
-  - homebrew/cask/transmission
+  - transmission
   - thunderbird
   - tiptoi-manager
   - tuxera-ntfs
@@ -317,7 +316,7 @@ homebrew_cask_apps:
   - setapp
   - mqtt-explorer
   - adobe-digital-editions
-  - kindle
+  #- kindle # disabled
   - chatgpt
   #- claude
   - aldente
@@ -371,6 +370,7 @@ pip_packages:
   - name: "ansible-lint[yamllint]"
   - name: esptool
   - name: aider-install
+  - name: tasmotizer
 
 gem_packages: []
 
