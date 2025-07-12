@@ -55,5 +55,8 @@
   shell: defaults write /Library/Preferences/com.apple.Bluetooth ControllerPowerState -int 0
 
 - name: Symlink Youtube-dl from yt-dlp
-  shell:
-    - ln -s /opt/homebrew/bin/yt-dlp /opt/homebrew/bin/youtube-dl
+  ansible.builtin.file:
+    src: /opt/homebrew/bin/yt-dlp
+    dest: /opt/homebrew/bin/youtube-dl
+    state: link
+    force: yes

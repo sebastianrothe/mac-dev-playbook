@@ -46,6 +46,12 @@
       when: configure_sublime
       tags: ['sublime-text']
 
+    - import_tasks: tasks/osx-custom.yml
+      tags: ['osx-custom']
+
+    - import_tasks: tasks/docker.yml
+      tags: ['docker']
+
     - name: Run post-provision task files in a block.
       tags: ['post']
       block:

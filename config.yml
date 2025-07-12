@@ -147,6 +147,11 @@ homebrew_installed_packages:
   - pyenv
   #- asdf
   - mise # replacement for asdf
+  # Python packages available via Homebrew
+  - mkdocs
+  - ansible-lint
+  - esptool
+  - uv  # modern Python package installer
 
 homebrew_uninstalled_packages: []
 
@@ -355,7 +360,7 @@ mas_installed_apps:
   #- { id: 1295203466, name: "Microsoft Remote Desktop" }
   #- { id: 1055511498, name: "Day One" }
   #- { id: 824171161, name: "Affinity Designer" }
-  - { id: 1440147259, name: "Ka-Block!" }
+  #- { id: 1335413823, name: "Ka-Block!" } # not working
   - { id: 1544743900, name: "Hush" }
   - { id: 914457352, name: "Metapho" }
   # - { id: 1365531024, name: "1Blocker" }
@@ -365,10 +370,9 @@ npm_packages:
   - name: npm-check-updates
   - name: fkill-cli # replaces kill
 
-pip_packages:
-  - name: mkdocs
-  - name: "ansible-lint[yamllint]"
-  - name: esptool
+pip_packages: []
+
+uv_packages:
   - name: aider-install
   - name: tasmotizer
 

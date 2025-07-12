@@ -116,3 +116,4 @@
   - https://downloads.gloriousgamingservices.com/download/SETUP_FW_MAC_OS_UPDATER.zip
 1. Download Altus
   - https://github.com/amanharwara/altus/releases
+1. Run `aider-install`
