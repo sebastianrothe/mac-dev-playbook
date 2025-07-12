@@ -1,0 +1,15 @@
+---
+- name: Check if uv packages are already installed
+  shell: uv tool list
+  register: uv_list
+  changed_when: false
+  failed_when: false
+
+- name: Install global uv packages
+  shell: uv tool install "{{ item.name | default(item) }}"
+  loop: "{{ uv_packages }}"
+  when: 
+    - uv_packages is defined 
+    - uv_packages | length > 0
+    - (item.name | default(item)) not in uv_list.stdout
+  register: uv_result

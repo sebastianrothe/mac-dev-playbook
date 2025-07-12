@@ -52,6 +52,9 @@
     - import_tasks: tasks/docker.yml
       tags: ['docker']
 
+    - import_tasks: tasks/python-packages.yml
+      tags: ['python-packages']
+
     - name: Run post-provision task files in a block.
       tags: ['post']
       block:
