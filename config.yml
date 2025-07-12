@@ -144,14 +144,15 @@ homebrew_installed_packages:
   - bottom # replacement for top
   - gromgit/fuse/ext4fuse-mac
   - gromgit/fuse/ext2fuse-mac
-  - pyenv
+  #- pyenv # replaced by uv
   #- asdf
   - mise # replacement for asdf
+  #- pipx # replaced by uv
+  - uv # modern Python package installer
   # Python packages available via Homebrew
   - mkdocs
   - ansible-lint
   - esptool
-  - uv  # modern Python package installer
 
 homebrew_uninstalled_packages: []
 

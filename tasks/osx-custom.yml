@@ -14,9 +14,9 @@
     - { key: autohide, type: int, value: 1 }
     - { key: magnification, type: int, value: 0 }
     - { key: orientation, type: string, value: left }
-    - { key: tilesize, type: float, value: 54 }
+    - { key: tilesize, type: int, value: 54 }
     - { key: minimize-to-application, type: int, value: 1 }
-    - { key: mru-spaces, type: int, value: true }
+    - { key: mru-spaces, type: int, value: 1 }
     - { key: mineffect, type: string, value: scale }
     - { key: autohide-delay, type: float, value: 0 }
     # Hot corners
@@ -52,6 +52,7 @@
     - { key: NewWindowTargetPath, type: string, value: "file://${HOME}/Downloads/" }
 
 - name: Disable Bluetooth
+  become: true
   shell: defaults write /Library/Preferences/com.apple.Bluetooth ControllerPowerState -int 0
 
 - name: Symlink Youtube-dl from yt-dlp
