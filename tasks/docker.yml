@@ -12,9 +12,6 @@
     state: link
     force: yes
 
-- name: Install Docker Buildx
-  shell: docker buildx install
-
 - name: Symlink Docker Buildx
   ansible.builtin.file:
     src: /opt/homebrew/opt/docker-buildx/bin/docker-buildx
