@@ -374,7 +374,7 @@ npm_packages:
 pip_packages: []
 
 uv_packages:
-  - name: aider-install
+  - name: aider-chat
   - name: tasmotizer
 
 gem_packages: []

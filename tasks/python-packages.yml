@@ -1,0 +1,29 @@
+---
+- name: Install aider-chat with official recommended command
+  shell: uv tool install --force --python python3.12 --with pip aider-chat@latest
+  when: 
+    - uv_packages is defined 
+    - uv_packages | length > 0
+  register: aider_result
+
+- name: Install other uv packages (with idempotency)
+  shell: |
+    PACKAGE_NAME="{{ item.name | default(item) }}"
+    # Skip aider packages as they're handled separately
+    if [[ "${PACKAGE_NAME}" == *"aider"* ]]; then
+      echo "Skipping ${PACKAGE_NAME} - handled by specific aider task"
+      exit 0
+    fi
+    
+    if uv tool list 2>/dev/null | grep -q "^${PACKAGE_NAME} "; then
+      echo "Package ${PACKAGE_NAME} already installed"
+    else
+      echo "Installing ${PACKAGE_NAME}..."
+      uv tool install "${PACKAGE_NAME}"
+    fi
+  loop: "{{ uv_packages }}"
+  when: 
+    - uv_packages is defined 
+    - uv_packages | length > 0
+  register: uv_result
+  changed_when: '"Installing" in uv_result.stdout'
