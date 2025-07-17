@@ -1,35 +1,35 @@
 # Mac Dev Setup
 1. Turn off Bluetooth
 1. Install Ansible (https://github.com/geerlingguy/mac-dev-playbook#installation)
-  1. export PATH="$HOME/Library/Python/3.9/bin:/opt/homebrew/bin:$PATH"
+  1. export PATH="$HOME/Library/Python/3.13/bin:/opt/homebrew/bin:$PATH"
 1. sudo chown -R $(whoami) /opt/homebrew
 1. `brew analytics off`
 1. sudo softwareupdate --install-rosetta --agree-to-license
 1. Run ansible playbook
 1. Change Wallpaper
 1. Disable Interface sounds
-1. Disable screensaver
+1. Disable Alert with volume set to 0%
+1. __Disable screensaver
 1. Reduce Spotlight to Applications, Settings only
 1. Safari Config (Adblocker, DuckDuckGo, KeepassXc)
 1. Symlink SSH config
 1. Firefox configuration: https://github.com/jakeprice-dev/ansible-macbook-macos/blob/master/playbook.yml#L276
-  1. Facebook container, uBlock, unhook, Keepassxc, enhancer, 
-  1. Optional extensions: https everywhere, dark reader
+  1. Facebook container, uBlock, unhook, Keepassxc, enhancer, languageTool
+  1. Optional extensions: ~~https everywhere~~, dark reader
   1. Settings, Cookies, Search Engine, Passwords, HTTPS, Privacy
 1. Chrome config
 1. Switch locale to English, region to Germany
 1. Add input sources: german, US international, US
 1. Disable Ad targeting
 1. Install node lts
-  - export N_PREFIX=$HOME/.n
-  - export PATH=$N_PREFIX/bin:$PATH
-  - LTS with `n install lts latest 16`
+  - `pnpm setup`
+  - `pnpm env add --global latest lts 16`
 1. Setup ZSH (zsh4humans, dotfiles, powerlevel10k)
   - zsh4humans
   - zoxide `echo 'eval "$(zoxide init zsh)"' >> ~/.zshrc
   - ZSH themes
     - Pure
-    - https://github.com/Powerlevel9k/powerlevel9k/wiki/Show-Off-Your-Config
+    - https://github.com/Powerlevel9k/powerlevel9k/wiki/Show-Off-r-Config
     - https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
   - Aliases
     - https://github.com/zimfw/utility/blob/master/init.zsh
@@ -51,15 +51,12 @@
   - Themes
     - https://raw.githubusercontent.com/GertjanReynaert/cobalt2-vim-theme/master/colors/cobalt2.vim
     - https://raw.githubusercontent.com/connorholyday/vim-snazzy/master/colors/snazzy.vim
-1. Setup Hyper
-  - `hyper install hyper-snazzy`
 1. Unhide Sound icon in Statusbar
 1. Disable audio bell on Terminal profile
 1. Remap Esc-Caps Lock for internal keyboard
 1. macFUSE: ext2, ext4
 1. Dock positions
 1. Show HomeFolder, Harddrive in Finder
-1. Configure Hot Corners
 1. Start ScrollReverser, Rectangle, Raycast
 1. Start Android Studio
   - Install SDK, Platform Tools
@@ -71,6 +68,7 @@
   - SSH
   - Documents
   - Downloads
+  - Dropbox
   - Photos
   - Videos
   - Little Snitch
@@ -78,30 +76,27 @@
   - MoneyMoney
   - IntelliJ
   - Thunderbird Profile
-  - Multipass VM
-  - Parallels VM
   - PGP Keys
+  - Timing DB
+  - Forklift Favorites
+  - TablePlus Connections
 1. Display settings
   - Add ICC profile to /Library/ColorSync/Profiles/Display
 1. Change hostname
-  - `sudo hostname mbp-srothe`
+  - `sudo hostname srothe-mbp-m4`
   - System preferences -> Sharing
 1. Set NTP Server to 0.de.pool.ntp.org
 1. Add licenses
   - MoneyMoney
   - LittleSnitch
   - MicroSnitch
-  - iStatMenus
   - Timing
   - Arq
 1. Start Tor and Nyx
-  - cp torrc /opt/homebrew/etc/tor/torrc
+  - cp /opt/homebrew/etc/tor/torrc.sample /opt/homebrew/etc/tor/torrc
   - brew services restart tor
 1. Add printer drivers
   - https://support.apple.com/kb/DL1888?locale=en_US
-1. Allow Canon EOS Camera for Slack, Teams, Zoom
-  - Run EOS Utility v2! Installer
-  - Run EOS Webcam Pro Installer
 1. Download GooseVPN `wget https://appup.goosevpn.com/GOOSE_VPN.dmg`
 1. Configure System
   - https://github.com/charlax/dotfiles/blob/master/install/install-apps-all.sh
@@ -116,4 +111,7 @@
   - https://downloads.gloriousgamingservices.com/download/SETUP_FW_MAC_OS_UPDATER.zip
 1. Download Altus
   - https://github.com/amanharwara/altus/releases
+  - Run `xattr -dr com.apple.quarantine "/Applications/Altus.app"`
+1. Enable Alacritty
+  - Run `xattr -dr com.apple.quarantine "/Applications/Alacritty.app"`
 1. Run `aider-install`

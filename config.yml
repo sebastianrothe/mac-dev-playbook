@@ -40,7 +40,6 @@ homebrew_installed_packages:
   - tmux
   - readline
   - openssl
-  - qt@5 # version 5 for tasmotizer?
   - pv
   - wrk
   - yamllint
@@ -153,6 +152,8 @@ homebrew_installed_packages:
   - mkdocs
   - ansible-lint
   - esptool
+  - neovim
+  - alacritty
 
 homebrew_uninstalled_packages: []
 
@@ -367,14 +368,15 @@ mas_installed_apps:
   # - { id: 1365531024, name: "1Blocker" }
   - { id: 943840744, name: "Victron Connect" }
 
-npm_packages:
+todo_pnpm_packages:
   - name: npm-check-updates
   - name: fkill-cli # replaces kill
 
 pip_packages: []
 
 uv_packages:
-  - name: aider-chat
+  #- name: aider-chat # original aider
+  - name: aider-install # augment-aider fork
   - name: tasmotizer
 
 gem_packages: []

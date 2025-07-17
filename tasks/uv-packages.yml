@@ -1,0 +1,19 @@
+---
+- name: Check if uv package is installed
+  shell: uv tool list | grep -w "{{ item }}"
+  loop: "{{ uv_packages }}"
+  register: uv_check
+  changed_when: false
+  failed_when: false
+
+- name: Install uv packages (with idempotency)
+  shell: |
+    echo "Installing {{ item }}..."
+    uv tool install --force "{{ item }}"
+  loop: "{{ uv_packages }}"
+  when:
+    - uv_packages is defined
+    - uv_packages | length > 0
+    - uv_check.results[loop.index0].rc != 0
+  register: uv_result
+  changed_when: '"Installing" in uv_result.stdout'
