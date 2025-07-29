@@ -11,7 +11,6 @@ homebrew_taps:
 homebrew_installed_packages:
   #- ansible # Installed via Pip.
   - autoconf
-  #- bash # replaced by zsh
   #- bash-completion # needed?
   #- doxygen
   - duti
@@ -33,8 +32,6 @@ homebrew_installed_packages:
   #- sqlite
   - micro
   - nmap
-  - node
-  - n
   - php
   - ssh-copy-id
   - tmux
@@ -47,8 +44,8 @@ homebrew_installed_packages:
   - yq
   - zsh
   - zsh-history-substring-search
+  - zsh-auto-suggestions
   - powerlevel10k
-  - pnpm
   #- azure-cli
   - composer
   #- symfony-cli/homebrew/symfony-cli
@@ -143,10 +140,7 @@ homebrew_installed_packages:
   - bottom # replacement for top
   - gromgit/fuse/ext4fuse-mac
   - gromgit/fuse/ext2fuse-mac
-  #- pyenv # replaced by uv
-  #- asdf
   - mise # replacement for asdf
-  #- pipx # replaced by uv
   - uv # modern Python package installer
   # Python packages available via Homebrew
   - mkdocs
@@ -166,56 +160,42 @@ homebrew_cask_apps:
   - ungoogled-chromium
   - arc
   - handbrake
-  #- kitty
   #- licecap
-  #- docker # or docker for docker-client
   #- maccy
   - sublime-text
   - transmit
   #- vagrant
-  # custom additions
   - affinity-publisher
   - affinity-designer
   - affinity-photo
-  # - alfred - replaced by raycast
   #- altserver
   - android-file-transfer
   #- android-studio
   - appcleaner
   - arq
-  # - betterzip # via setapp
   - breitbandmessung
   - calibre
-  #- canon-eos-utility # needs v2 https://gdlp01.c-wss.com/gds/9/0200005809/01/EU-Installset-M2.14.31.12c.dmg.zip
-  #- canon-eos-webcam-utility # https://downloads.canon.com/webcam/EOSWebcamUtilityPro-MAC2.0.30.pkg.zip
   - opal-composer
   #- commander-one
-  # - dash # via setapp
   #- devolo-cockpit
   - dropbox
-  #- filezilla - n/a forklift does the same
-  #- forklift # via setapp
   #- flux
-  - font-fira-code
   - font-fira-code-nerd-font
-  - font-hack
   - font-hack-nerd-font
   - font-inconsolata-g-for-powerline
-  - font-meslo-lg
   - font-meslo-lg-nerd-font
   - font-source-code-pro-for-powerline
   - font-open-sans
   - font-roboto
-  - font-victor-mono
   - font-victor-mono-nerd-font
+  - font-monaspace-nerd-font
+  - font-jetbrains-mono-nerd-font
   #- ganttproject - 404
-  # - gemini # via setapp
   - gog-galaxy
   #- battle-net
   #- google-cloud-sdk
   #- gpg-suite-no-mail
   #- hot
-  #- hyper # replaced by warp
   - iina
   - itsycal
   #- fantastical
@@ -228,7 +208,6 @@ homebrew_cask_apps:
   - little-snitch
   - libreoffice
   - libreoffice-language-pack
-  # - macdown # not maintained anymore
   #- meld
   - micro-snitch
   #- mongodb-compass
@@ -241,11 +220,9 @@ homebrew_cask_apps:
   - obsidian
   - macfuse
   - moneymoney
-  #- parallels@18 # replaced by crossover
   - porting-kit
   - crossover
   - qlcolorcode
-  #- qlimagesize # unmaintained
   - qlmarkdown
   - qlprettypatch
   - qlstephen
@@ -254,23 +231,19 @@ homebrew_cask_apps:
   - quicklook-json
   - quicklookase
   - raycast
-  - rectangle # replaced by monarch
-  #- monarch
+  - rectangle # could be replaced by monarch
+  #- monarch # cant exclude keepassxc for now
   - scroll-reverser
   - scummvm
   - signal
   #- sourcetree
   #- splashtop-personal - or remote-desktop
-  #- mutespotifyads
-  #- spotifree
-  #- spotify # replace by web version
   #- sketch
   - steam
   - suspicious-package
   #- synergy
   # - toggl-track # not there
-  #- tableplus # via setapp
-  #- dbeaver-community
+  #- dbeaver-community # replaced by tableplus
   #- teamviewer
   - temurin
   - temurin@11
@@ -281,18 +254,17 @@ homebrew_cask_apps:
   - tuxera-ntfs
   - visual-studio-code
   - cursor
-  #- windsurf
+  - windsurf
+  - visual-studio-code@insiders
   #- vlc
   - webpquicklook
   #- wineskin-winery - n/a
   #- wordpresscom
   - xquartz
   - yubico-yubikey-manager
-  #- timing # via setapp
   - telegram
   # - zoom # use webapp
   # GooseVPN - n/a - download from https://appup.goosevpn.com/GOOSE_VPN.dmg
-  #- cleanmymac # via setapp
   # F3X - n/a
   - imageoptim
   #- intellij-idea
@@ -304,7 +276,6 @@ homebrew_cask_apps:
   # QuickRes - n/a
   - teensy
   # Teensyduino - n/a
-  #- balenaetcher - replaced by raspberry-pi-imager
   # tplc
   # istat-menus - replaced by stats
   - stats
@@ -342,6 +313,7 @@ setapp_installed_apps:
   - awesome habits
   - gemini
   - timing
+  #- betterzip
 
 mas_installed_apps:
   #- { id: 498486288, name: "Quick Resizer" }
@@ -350,18 +322,14 @@ mas_installed_apps:
   - { id: 904280696, name: "Things" }
   - { id: 425264550, name: "Disk Speed Test" }
   # - { id: 409183694, name: "Keynote" }
-  #- { id: 639210716, name: "NeoOffice" }
   #- { id: 425955336, name: "Skitch" }
-  #- { id: 413965349, name: "Soulver 2" }
   #- { id: 682658836, name: "GarageBand" }
   # - { id: 407963104, name: "Pixelmator" } - n/a for ARM
   - { id: 409203825, name: "Numbers" }
-  #- { id: 824183456, name: "Affinity Photo" }
   - { id: 409201541, name: "Pages" }
   # - { id: 408981434, name: "iMovie" }
   #- { id: 1295203466, name: "Microsoft Remote Desktop" }
   #- { id: 1055511498, name: "Day One" }
-  #- { id: 824171161, name: "Affinity Designer" }
   #- { id: 1335413823, name: "Ka-Block!" } # not working
   - { id: 1544743900, name: "Hush" }
   - { id: 914457352, name: "Metapho" }
@@ -371,12 +339,32 @@ mas_installed_apps:
 todo_pnpm_packages:
   - name: npm-check-updates
   - name: fkill-cli # replaces kill
+  - name: @anthropic-ai/claude-
+  - name: @qodo/command
 
 pip_packages: []
 
 uv_packages:
-  #- name: aider-chat # original aider
-  - name: aider-install # augment-aider fork
+  - name: 
+  - name: tasmotizer
+
+todo_vscode_packages:
+  - name: 
+  - name: tasmotizer
+
+todo_cursor_packages:
+  - name: 
+  - name: tasmotizer
+
+todo_windsurf_packages:
+  - name: 
+  - name: tasmotizer
+
+todo_vscode_insiders_packages:
+  - name: qodo
+
+todo_zed_packages:
+  - name: 
   - name: tasmotizer
 
 gem_packages: []
