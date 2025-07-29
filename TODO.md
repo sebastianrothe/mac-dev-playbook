@@ -6,7 +6,7 @@
 1. `brew analytics off`
 1. sudo softwareupdate --install-rosetta --agree-to-license
 1. Run ansible playbook
-1. Change Wallpaper
+1. Change Wallpaper and Background to Live
 1. Disable Interface sounds
 1. Disable Alert with volume set to 0%
 1. __Disable screensaver
@@ -21,12 +21,15 @@
 1. Switch locale to English, region to Germany
 1. Add input sources: german, US international, US
 1. Disable Ad targeting
-1. Install node lts
-  - `pnpm setup`
-  - `pnpm env add --global latest lts 16`
+1. Install node, pnpm @latest
+  - `mise use --global cosign slsa-verifier`
+  - `mise install nodejs@latest pnpm@latest`
+  - `mise use --global nodejs@latest pnpm@latest`
+  - `corepack disable`
 1. Setup ZSH (zsh4humans, dotfiles, powerlevel10k)
   - zsh4humans
   - zoxide `echo 'eval "$(zoxide init zsh)"' >> ~/.zshrc
+  - eval "$(~/.local/bin/mise activate zsh)"
   - ZSH themes
     - Pure
     - https://github.com/Powerlevel9k/powerlevel9k/wiki/Show-Off-r-Config
@@ -47,7 +50,7 @@
     - https://dev.to/sabrinagannon/moving-to-native-vim-plugin-management-1hpa
     - https://medium.com/@huntie/10-essential-vim-plugins-for-2018-39957190b7a9
     - https://github.com/editorconfig/editorconfig-vim
-  - Neovim
+  - TODO: Neovim
   - Themes
     - https://raw.githubusercontent.com/GertjanReynaert/cobalt2-vim-theme/master/colors/cobalt2.vim
     - https://raw.githubusercontent.com/connorholyday/vim-snazzy/master/colors/snazzy.vim
@@ -96,7 +99,8 @@
   - cp /opt/homebrew/etc/tor/torrc.sample /opt/homebrew/etc/tor/torrc
   - brew services restart tor
 1. Add printer drivers
-  - https://support.apple.com/kb/DL1888?locale=en_US
+  - ~~https://support.apple.com/kb/DL1888?locale=en_US~
+  - https://discussions.apple.com/thread/255806096?sortBy=rank
 1. Download GooseVPN `wget https://appup.goosevpn.com/GOOSE_VPN.dmg`
 1. Configure System
   - https://github.com/charlax/dotfiles/blob/master/install/install-apps-all.sh
@@ -108,7 +112,7 @@
   - https://wiki.nikitavoloboev.xyz/unix/dotfiles
   - https://github.com/mitchellh/nixos-config
 1. Download Glorious Software
-  - https://downloads.gloriousgamingservices.com/download/SETUP_FW_MAC_OS_UPDATER.zip
+  - https://www.gloriousgaming.com/en-de/pages/software?software=GMMK%201
 1. Download Altus
   - https://github.com/amanharwara/altus/releases
   - Run `xattr -dr com.apple.quarantine "/Applications/Altus.app"`
