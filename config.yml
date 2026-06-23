@@ -21,6 +21,7 @@ homebrew_installed_packages:
   #- github/gh/gh
   - gitui
   - git-filter-repo
+  - lazygit
   - go
   - gpg
   - htop
@@ -83,6 +84,7 @@ homebrew_installed_packages:
   - unzip
   - vim
   - w3m
+  - ffmpeg # for yt-dlp
   # GNU Core Utils
   - coreutils
   - binutils
@@ -140,14 +142,28 @@ homebrew_installed_packages:
   - bottom # replacement for top
   - gromgit/fuse/ext4fuse-mac
   - gromgit/fuse/ext2fuse-mac
+  - neovim
+  - #wezterm # replacement for alacritty?
+  #- alacritty # does not pass gatekeeper anymore
+  - rmlint
   - mise # replacement for asdf
   - uv # modern Python package installer
   # Python packages available via Homebrew
   - mkdocs
   - ansible-lint
   - esptool
-  - neovim
-  - alacritty
+  - qsv
+  - claude-code
+  - cursor-cli
+  - anomalyco/tap/opencode
+  - rust
+  - gitu
+  - jj
+  - ast-grep
+  - topgrade
+  - rtk
+  - semgrep
+  - aichat
 
 homebrew_uninstalled_packages: []
 
@@ -157,6 +173,7 @@ homebrew_cask_apps:
   - dropbox
   - firefox
   - firefox@developer-edition
+  - google-chrome # for playwright, karma
   - ungoogled-chromium
   - arc
   - handbrake
@@ -165,9 +182,10 @@ homebrew_cask_apps:
   - sublime-text
   - transmit
   #- vagrant
-  - affinity-publisher
-  - affinity-designer
-  - affinity-photo
+  - affinity
+  #- affinity-publisher
+  #- affinity-designer
+  #- affinity-photo
   #- altserver
   - android-file-transfer
   #- android-studio
@@ -206,8 +224,8 @@ homebrew_cask_apps:
   #- mos
   #- smooze
   - little-snitch
-  - libreoffice
-  - libreoffice-language-pack
+  #- libreoffice # replaced by onlyoffice
+  #- libreoffice-language-pack
   #- meld
   - micro-snitch
   #- mongodb-compass
@@ -222,14 +240,16 @@ homebrew_cask_apps:
   - moneymoney
   - porting-kit
   - crossover
-  - qlcolorcode
-  - qlmarkdown
-  - qlprettypatch
-  - qlstephen
+  #- qlcolorcode
+  #- qlmarkdown
+  #- qlprettypatch
+  #- qlstephen
   - qlvideo
-  - quicklook-csv
-  - quicklook-json
-  - quicklookase
+  #- quicklook-csv
+  #- quicklook-json
+  #- quicklookase
+  #- webpquicklook
+  - syntax-highlight
   - raycast
   - rectangle # could be replaced by monarch
   #- monarch # cant exclude keepassxc for now
@@ -257,11 +277,10 @@ homebrew_cask_apps:
   - windsurf
   - visual-studio-code@insiders
   #- vlc
-  - webpquicklook
   #- wineskin-winery - n/a
   #- wordpresscom
   - xquartz
-  - yubico-yubikey-manager
+  #- yubico-yubikey-manager # disabled/deprecated
   - telegram
   # - zoom # use webapp
   # GooseVPN - n/a - download from https://appup.goosevpn.com/GOOSE_VPN.dmg
@@ -297,11 +316,17 @@ homebrew_cask_apps:
   #- kindle # disabled
   - chatgpt
   #- claude
-  - aldente
+  #- aldente
   #- moom
   - kindle-previewer
   - zed
   - raspberry-pi-imager
+  - onlyoffice
+  #- chatgpt-atlas
+  #- comet
+  #- opencode-desktop
+  #- sublime-merge
+  - meetingbar
 
 setapp_installed_apps:
   - soulver3
@@ -313,7 +338,10 @@ setapp_installed_apps:
   - awesome habits
   - gemini
   - timing
+  - aldente-pro
   #- betterzip
+  - marked
+  - bartender
 
 mas_installed_apps:
   #- { id: 498486288, name: "Quick Resizer" }
@@ -339,33 +367,44 @@ mas_installed_apps:
 todo_pnpm_packages:
   - name: npm-check-updates
   - name: fkill-cli # replaces kill
-  - name: @anthropic-ai/claude-
+  #- name: @anthropic-ai/claude # replace by cask
   - name: @qodo/command
+  - name: @google/jules
+  - name: @mariozechner/pi-coding-agent
 
 pip_packages: []
 
 uv_packages:
-  - name: 
+  #- name: openai
   - name: tasmotizer
 
 todo_vscode_packages:
-  - name: 
-  - name: tasmotizer
+  - name: todo
 
 todo_cursor_packages:
-  - name: 
-  - name: tasmotizer
+  - name: todo
 
 todo_windsurf_packages:
-  - name: 
-  - name: tasmotizer
+  - name: todo
 
 todo_vscode_insiders_packages:
-  - name: qodo
+  - name: todo
 
 todo_zed_packages:
-  - name: 
-  - name: tasmotizer
+  - name: todo
+  
+todo_cargo_packages:
+  - name: https://github.com/graphwork/workgraph # cargo install --git https://github.com/graphwork/workgraph
+  - name: cargo-update
+  
+todo_ctx7_packages:
+  - name: /anthropics/skills webapp-testing
+  - name: /vercel-labs/agent-skills web-design-guidelines
+  - name: /anthropics/skills frontend-design
+  - name: /alirezarezvani/claude-skills senior-frontend
+  - name: /anthropics/skills canvas-design
+  - name: /obra/superpowers using-superpowers
+  - name: /obra/superpowers-skills "pulling updates from skills repository"
 
 gem_packages: []
 
