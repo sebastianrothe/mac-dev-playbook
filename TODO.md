@@ -14,7 +14,7 @@
 1. Safari Config (Adblocker, DuckDuckGo, KeepassXc)
 1. Symlink SSH config
 1. Firefox configuration: https://github.com/jakeprice-dev/ansible-macbook-macos/blob/master/playbook.yml#L276
-  1. Facebook container, uBlock, unhook, Keepassxc, enhancer, languageTool
+  1. Facebook container, uBlock, unhook, Keepassxc, enhancer, languageTool, privacy badger, bibbot
   1. Optional extensions: ~~https everywhere~~, dark reader
   1. Settings, Cookies, Search Engine, Passwords, HTTPS, Privacy
 1. Chrome config
@@ -22,14 +22,11 @@
 1. Add input sources: german, US international, US
 1. Disable Ad targeting
 1. Install node, pnpm @latest
-  - `mise use --global cosign slsa-verifier`
-  - `mise install nodejs@latest pnpm@latest`
-  - `mise use --global nodejs@latest pnpm@latest`
-  - `corepack disable`
+  - `mise use --global cosign slsa-verifier nodejs@latest pnpm@latest`
 1. Setup ZSH (zsh4humans, dotfiles, powerlevel10k)
   - zsh4humans
   - zoxide `echo 'eval "$(zoxide init zsh)"' >> ~/.zshrc
-  - eval "$(~/.local/bin/mise activate zsh)"
+  - `eval "$(~/.local/bin/mise activate zsh)"`
   - ZSH themes
     - Pure
     - https://github.com/Powerlevel9k/powerlevel9k/wiki/Show-Off-r-Config
@@ -117,5 +114,16 @@
   - https://github.com/amanharwara/altus/releases
   - Run `xattr -dr com.apple.quarantine "/Applications/Altus.app"`
 1. Enable Alacritty
+  - https://github.com/alacritty/alacritty/releases
   - Run `xattr -dr com.apple.quarantine "/Applications/Alacritty.app"`
-1. Run `aider-install`
+''1. Run `aider-install`
+1. Install `Quillbot`
+1. Install `Dato`
+
+
+Replacements:
+•  qlcolorcode, qlmarkdown, qlprettypatch, qlstephen → syntax-highlight (modern QuickLook extension)
+•  alacritty → Reinstall from the cask (may have been fixed)
+•  quicklook-csv, quicklook-json, quicklookase, webpquicklook → Will uninstall (no maintained replacements)
+•  qmk-toolbox → Will reinstall if still needed
+•  affinity-designer, affinity-photo, affinity-publisher → Discontinued upstream (no replacements)
