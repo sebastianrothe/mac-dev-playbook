@@ -1,3 +1,8 @@
+# disable for now
+configure_dotfiles: false
+
+dotfiles_repo: https://github.com/sebastianrothe/dotfiles.git
+dotfiles_repo_version: main
 dotfiles_repo_local_destination: ~/Documents/projects/dotfiles
 
 post_provision_tasks:
@@ -46,6 +51,7 @@ homebrew_installed_packages:
   - zsh
   - zsh-history-substring-search
   - zsh-auto-suggestions
+  - zsh-syntax-highlighting
   - powerlevel10k
   #- azure-cli
   - composer
@@ -138,13 +144,13 @@ homebrew_installed_packages:
   - ncdu
   - procs  # replacement for ps
   - eddieantonio/eddieantonio/imgcat
-  - speedtest-cli
+  #- speedtest-cli # replaced by `networkQuality -v
   - bottom # replacement for top
   - gromgit/fuse/ext4fuse-mac
   - gromgit/fuse/ext2fuse-mac
   - neovim
-  - #wezterm # replacement for alacritty?
-  #- alacritty # does not pass gatekeeper anymore
+  - wezterm # replacement for alacritty, warp?
+  - alacritty # does not pass gatekeeper anymore
   - rmlint
   - mise # replacement for asdf
   - uv # modern Python package installer
@@ -164,6 +170,11 @@ homebrew_installed_packages:
   - rtk
   - semgrep
   - aichat
+  - apfel
+  - mole
+  - aube
+  - zellij
+  - atuin
 
 homebrew_uninstalled_packages: []
 
@@ -183,9 +194,9 @@ homebrew_cask_apps:
   - transmit
   #- vagrant
   - affinity
-  #- affinity-publisher
-  #- affinity-designer
-  #- affinity-photo
+  #- affinity-publisher # replaced by affinity
+  #- affinity-designer # replaced by affinity
+  #- affinity-photo # replaced by affinity
   #- altserver
   - android-file-transfer
   #- android-studio
@@ -299,8 +310,9 @@ homebrew_cask_apps:
   # istat-menus - replaced by stats
   - stats
   - little-snitch # can be replaced by LuLu
-  - via
-  - qmk-toolbox
+  #- via # replaced by webapp
+  #- qmk-toolbox # replaced by webapp
+  #qmk/qmk/qmk
   - warp
   - cursor
   - polypane
@@ -311,7 +323,7 @@ homebrew_cask_apps:
   - keyclu
   #- starcraft
   - setapp
-  - mqtt-explorer
+  - mqttx
   - adobe-digital-editions
   #- kindle # disabled
   - chatgpt
@@ -327,6 +339,7 @@ homebrew_cask_apps:
   #- opencode-desktop
   #- sublime-merge
   - meetingbar
+  - cursor-cli
 
 setapp_installed_apps:
   - soulver3
