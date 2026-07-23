@@ -116,7 +116,8 @@
 1. Enable Alacritty
   - https://github.com/alacritty/alacritty/releases
   - Run `xattr -dr com.apple.quarantine "/Applications/Alacritty.app"`
-''1. Run `aider-install`
+1. Configure Cursor CLI
+  - Run `xattr -dr com.apple.quarantine "/opt/homebrew/Caskroom/cursor-cli/"`
 1. Install `Quillbot`
 1. Install `Dato`
 
